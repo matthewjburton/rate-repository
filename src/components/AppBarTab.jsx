@@ -1,5 +1,6 @@
-import { Text, StyleSheet, Pressable } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 import theme from '../theme';
+import { Link } from 'react-router-native';
 
 const AppBarTab = ({ name }) => {
   const styles = StyleSheet.create({
@@ -12,9 +13,9 @@ const AppBarTab = ({ name }) => {
   });
 
   return (
-    <Pressable>
+    <Link to={`/${name.toLowerCase().replace(/\s+/g, '-')}`}>
       <Text style={styles.tab}>{name}</Text>
-    </Pressable>
+    </Link>
   );
 };
 
