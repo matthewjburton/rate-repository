@@ -2,7 +2,7 @@ import { Text, StyleSheet } from 'react-native';
 import theme from '../theme';
 import { Link } from 'react-router-native';
 
-const AppBarTab = ({ name }) => {
+const AppBarTab = ({ name, onPress }) => {
   const styles = StyleSheet.create({
     tab: {
       color: theme.colors.textAppBar,
@@ -13,9 +13,9 @@ const AppBarTab = ({ name }) => {
   });
 
   return (
-    <Link to={`/${name.toLowerCase().replace(/\s+/g, '-')}`}>
+    <TouchableOpacity onPress={onPress}>
       <Text style={styles.tab}>{name}</Text>
-    </Link>
+    </TouchableOpacity>
   );
 };
 

@@ -4,6 +4,7 @@ import { GET_REPOSITORIES } from '../graphql/queries';
 import Constants from 'expo-constants';
 
 const useRepositories = () => {
+  /*
   const [repositories, setRepositories] = useState();
   const [loading, setLoading] = useState(false);
 
@@ -22,8 +23,8 @@ const useRepositories = () => {
   }, []);
 
   return { repositories, loading, refetch: fetchRepositories };
+  */
 
-  /*
   const { data, error, loading } = useQuery(GET_REPOSITORIES, {
     fetchPolicy: 'cache-and-network',
   });
@@ -31,7 +32,6 @@ const useRepositories = () => {
   const repositories = loading ? undefined : data?.repositories;
 
   return { repositories, loading };
-  */
 };
 
 export default useRepositories;

@@ -7,9 +7,25 @@ export const GET_REPOSITORIES = gql`
     repositories {
       edges {
         node {
-          Repository
+          ...Repository
         }
       }
+    }
+  }
+`;
+
+export const SIGN_IN = gql`
+  mutation Authenticate($credentials: AuthenticateInput) {
+    authenticate(credentials: $credentials) {
+      accessToken
+    }
+  }
+`;
+
+export const ME = gql`
+  query Me {
+    me {
+      username
     }
   }
 `;
